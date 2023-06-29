@@ -27,11 +27,12 @@ def play_dash():
     time.sleep(0.2)
 
 
-# Function to play silence between words
+# Function to play silences between words
 def play_silence():
     time.sleep(SPACE_BETWEEN_WORDS)
 
 
+# Plays sounds for each element
 def play_morse_sound(codex_text):
     for element in codex_text:
         for symbol in element:

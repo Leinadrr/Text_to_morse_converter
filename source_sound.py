@@ -37,8 +37,4 @@ class Signals:
         sound_data = np.int16(x * self.amp)
         my_sound = sk.sounds.Sound(inData=sound_data, inRate=self.rate)
         my_sound.write_wav("sounds/dash.wav")
-#
-# i = sk.sounds.Sound("sounds/dot.wav")
-# o = sk.sounds.Sound("sounds/dash.wav")
-
 
