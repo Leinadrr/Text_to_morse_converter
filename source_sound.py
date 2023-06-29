@@ -10,9 +10,9 @@ class Signals:
         self.rate = 22050
         self.dt = 1. / self.rate
         self.freq = 440
-        self.dot_t = np.arange(0, 0.05, self.dt)  # Rango de tiempo para el sonido "dot"
-        self.dash_t = np.arange(0, 0.15, self.dt)  # Rango de tiempo para el sonido "dash"
-        self.x = np.sin(2 * np.pi * self.freq * self.dot_t)  # Generación del sonido "dot"
+        self.dot_t = np.arange(0, 0.05, self.dt)  # Range of time for "dot" sound
+        self.dash_t = np.arange(0, 0.15, self.dt)  # Range of time for "dash" sound
+        self.x = np.sin(2 * np.pi * self.freq * self.dot_t)
         self.amp = 2 ** 13
         self.sound_data = np.int16(self.x * self.amp)
         self.make_signal()
