@@ -8,11 +8,12 @@ class Signals:
     # Wave sound properties
     def __init__(self):
         self.rate = 22050
-        self.dt = 1./self.rate
+        self.dt = 1. / self.rate
         self.freq = 440
-        self.t = np.arange(0, 0.05, self.dt)
-        self.x = np.sin(2*np.pi*self.freq * self.t)
-        self.amp = 2**13
+        self.dot_t = np.arange(0, 0.05, self.dt)  # Rango de tiempo para el sonido "dot"
+        self.dash_t = np.arange(0, 0.15, self.dt)  # Rango de tiempo para el sonido "dash"
+        self.x = np.sin(2 * np.pi * self.freq * self.dot_t)  # Generación del sonido "dot"
+        self.amp = 2 ** 13
         self.sound_data = np.int16(self.x * self.amp)
         self.make_signal()
 
@@ -32,6 +33,12 @@ class Signals:
 
     # Function that create the 'dash' sound
     def make_dash(self):
-        self.t = np.arange(0, 0.15, self.dt)
-        my_sound = sk.sounds.Sound(inData=self.sound_data, inRate=self.rate)
+        x = np.sin(2 * np.pi * self.freq * self.dash_t)  # Generación del sonido "dash" con diferente rango de tiempo
+        sound_data = np.int16(x * self.amp)
+        my_sound = sk.sounds.Sound(inData=sound_data, inRate=self.rate)
         my_sound.write_wav("sounds/dash.wav")
+#
+# i = sk.sounds.Sound("sounds/dot.wav")
+# o = sk.sounds.Sound("sounds/dash.wav")
+
+

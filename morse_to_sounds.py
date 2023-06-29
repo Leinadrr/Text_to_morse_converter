@@ -11,7 +11,7 @@ audio_channel = pygame.mixer.Channel(0)
 
 # Dot and dash duration in seconds
 DOTS_DURATION = 0.1
-SPACE_BETWEEN_SYMBOLS = 0.2
+SPACE_BETWEEN_SYMBOLS = 0.15
 SPACE_BETWEEN_WORDS = 0.6
 
 
@@ -24,7 +24,7 @@ def play_dot():
 # Function to play dash sound
 def play_dash():
     pygame.mixer.Sound("sounds/dash.wav").play()
-    time.sleep(0.22)
+    time.sleep(0.2)
 
 
 # Function to play silence between words
